@@ -9,7 +9,9 @@ public class Player : MonoBehaviour, IPlayerAbility
     public float EnlargeScale = 2;
     public float FastScale = 4;
     public GameObject ScoreUI;
-    public ParticleSystem RunningParticle, JumpingParticle;
+    public ParticleSystem RunningParticle;
+    public Slider slider;
+    public Image sliderFill;
 
     private int JumpCount = 0;
     private Rigidbody2D rigid;
@@ -25,7 +27,8 @@ public class Player : MonoBehaviour, IPlayerAbility
         rigid = GetComponent<Rigidbody2D>();
         PlayerCollider = GetComponent<CapsuleCollider2D>();
         Animator = GetComponent<Animator>();
-        
+        slider.maxValue = hp;
+        slider.value = slider.maxValue;
     }
 
     // Update is called once per frame
@@ -33,6 +36,10 @@ public class Player : MonoBehaviour, IPlayerAbility
     {
         Jump();
         Slide();
+
+        hp -= Time.deltaTime;
+        slider.value = hp;
+        sliderFill.color = new Color(1 - slider.value / slider.maxValue, slider.value / slider.maxValue, 0);
 
         if (Input.GetKeyDown(KeyCode.P))
         {
@@ -48,7 +55,6 @@ public class Player : MonoBehaviour, IPlayerAbility
             rigid.velocity = new Vector2(0, 25);
             Animator.Play("PlayerJumping");
             RunningParticle.Stop();
-            JumpingParticle.Play();
         }
     }
 
