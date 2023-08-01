@@ -9,6 +9,7 @@ public class Player : MonoBehaviour, IPlayerAbility
     public float EnlargeScale = 2;
     public float FastScale = 4;
     public GameObject ScoreUI;
+    public ParticleSystem RunningParticle, JumpingParticle;
 
     private int JumpCount = 0;
     private Rigidbody2D rigid;
@@ -46,6 +47,8 @@ public class Player : MonoBehaviour, IPlayerAbility
             JumpCount += 1;
             rigid.velocity = new Vector2(0, 25);
             Animator.Play("PlayerJumping");
+            RunningParticle.Stop();
+            JumpingParticle.Play();
         }
     }
 
@@ -69,6 +72,7 @@ public class Player : MonoBehaviour, IPlayerAbility
         {
             JumpCount = 0;
             Animator.Play("PlayerRunning");
+            RunningParticle.Play();
         }
     }
 
