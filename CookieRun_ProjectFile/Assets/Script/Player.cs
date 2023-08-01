@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IPlayerAbility
 {
     public float hp = 100;
     public float EnlargeScale = 2;
     public float FastScale = 4;
+    public GameObject ScoreUI;
 
     private int JumpCount = 0;
     private Rigidbody2D rigid;
@@ -14,6 +16,7 @@ public class Player : MonoBehaviour, IPlayerAbility
     private Animator Animator;
     private bool IsJumping = false;
     private bool IsEnlarged = false;
+    private int CurrentScore = 0;
 
     // Start is called before the first frame update
     void Awake()
@@ -30,7 +33,10 @@ public class Player : MonoBehaviour, IPlayerAbility
         Jump();
         Slide();
 
-        
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            GetScore(100);
+        }
     }
 
     public void Jump()
@@ -89,8 +95,10 @@ public class Player : MonoBehaviour, IPlayerAbility
 
     }
 
-    public void GetScore(float amount)
+    public void GetScore(int amount)
     {
-
+        int NewScore = CurrentScore + amount;
+        CurrentScore = NewScore;
+        ScoreUI.GetComponent<Text>().text = NewScore.ToString();
     }
 }
