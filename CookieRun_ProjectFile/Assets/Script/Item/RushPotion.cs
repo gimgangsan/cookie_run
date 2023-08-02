@@ -8,12 +8,13 @@ public class RushPotion : Item
     public float SpeedIncrement;
     public override void effecacy()
     {
-        base.back.speed += SpeedIncrement;
+        player.GetFast(SpeedIncrement);
         Invoke("finish", Duration);
+        base.effecacy();
     }
 
     void finish()
     {
-        base.back.speed -= SpeedIncrement;
+        player.GetFast(this.Speed);
     }
 }

@@ -3,22 +3,22 @@ using UnityEngine;
 public class Item : MonoBehaviour, ItemINF
 {
     PoolManager Pool;
-    protected Background back;
+    protected float Speed;
     protected Player player;
     ParticleSystem ItemPickParticle;
     Rigidbody2D rigid;
 
-    void Start()
+    void Awake()
     {
         rigid = GetComponent<Rigidbody2D>();
         Pool = GameObject.Find("Pool Manager").GetComponent<PoolManager>();
-        back = GameObject.Find("Background").GetComponent<Background>();
+        Speed = GameObject.Find("Background").GetComponent<Background>().speed;
         player = GameObject.Find("Player(test)").GetComponent<Player>();
     }
 
     void Update()
     {
-        rigid.velocity = new Vector2(-back.speed, 0);
+        rigid.velocity = new Vector2(-Speed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,5 +33,8 @@ public class Item : MonoBehaviour, ItemINF
         }
     }
 
-    public virtual void effecacy() { }
+    public virtual void effecacy() 
+    {
+        
+    }
 }

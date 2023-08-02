@@ -15,14 +15,14 @@ public class Background : MonoBehaviour, IObjectSpeed
     // Update is called once per frame
     void Update()
     {
-        Movement(speed);
+        transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
         if (transform.position.x <= -21.99452)
         {
             transform.position = startpos;
         }
     }
-    public void Movement(float speed)
+    public void Movement(float newSpeed)
     {
-        transform.Translate(new Vector2(-1, 0) * speed * Time.deltaTime);
+        this.speed = newSpeed;
     }
 }

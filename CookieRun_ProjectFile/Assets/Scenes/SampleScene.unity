@@ -10765,7 +10765,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   EnlargeScale: 2
-  FastScale: 4
   ScoreUI: {fileID: 1436347814}
   RunningParticle: {fileID: 1573240272}
   slider: {fileID: 927942377}
@@ -10838,7 +10837,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1942820529
 GameObject:
@@ -11138,7 +11137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3250703554247099701, guid: 4162958554bc4ab4eb1e4110d4dfd7f6, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3250703554247099701, guid: 4162958554bc4ab4eb1e4110d4dfd7f6, type: 3}
       propertyPath: m_LocalPosition.x

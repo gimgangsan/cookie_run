@@ -7,7 +7,6 @@ public class Player : MonoBehaviour, IPlayerAbility
 {
     public float hp = 100;
     public float EnlargeScale = 2;
-    public float FastScale = 4;
     public GameObject ScoreUI;
     public ParticleSystem RunningParticle;
     public Slider slider;
@@ -17,9 +16,10 @@ public class Player : MonoBehaviour, IPlayerAbility
     private Rigidbody2D rigid;
     private CapsuleCollider2D PlayerCollider;
     private Animator Animator;
-    private bool IsJumping = false;
     private bool IsEnlarged = false;
     private int CurrentScore = 0;
+
+    private Background back;
 
     // Start is called before the first frame update
     void Awake()
@@ -29,6 +29,7 @@ public class Player : MonoBehaviour, IPlayerAbility
         Animator = GetComponent<Animator>();
         slider.maxValue = hp;
         slider.value = slider.maxValue;
+        back = GameObject.Find("Background").GetComponent<Background>();
     }
 
     // Update is called once per frame
@@ -80,6 +81,12 @@ public class Player : MonoBehaviour, IPlayerAbility
             Animator.Play("PlayerRunning");
             RunningParticle.Play();
         }
+
+        if (collision.collider.CompareTag("Item"))
+        {
+            Debug.Log("lol");
+            //collision.collider.GetComponent<ItemINF>().effecacy();
+        }
     }
 
     public void RestoreHP(float amount)
@@ -100,9 +107,9 @@ public class Player : MonoBehaviour, IPlayerAbility
         transform.localScale = new Vector3(1, 1, 1);
     }
 
-    public void GetFast()
+    public void GetFast(float speed)
     {
-
+        back.speed = speed;
     }
 
     public void GetScore(int amount)

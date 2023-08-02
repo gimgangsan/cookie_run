@@ -6,6 +6,6 @@ public interface IPlayerAbility
 {
     void RestoreHP(float amount);
     void Enlarge();
-    void GetFast();
+    void GetFast(float speed);
     void GetScore(int amount);
 }
