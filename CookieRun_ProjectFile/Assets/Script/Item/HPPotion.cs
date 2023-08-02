@@ -7,7 +7,7 @@ public class HPPotion : Item
     public float restore;
     public override void effecacy()
     {
-        base.player.RestoreHP(restore);
+        General.Instance.player.RestoreHP(restore);
         base.effecacy();
     }
 }

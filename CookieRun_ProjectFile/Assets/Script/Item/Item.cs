@@ -4,21 +4,19 @@ public class Item : MonoBehaviour, ItemINF
 {
     PoolManager Pool;
     protected float Speed;
-    protected Player player;
     ParticleSystem ItemPickParticle;
     Rigidbody2D rigid;
 
-    void Awake()
+    void Start()
     {
         rigid = GetComponent<Rigidbody2D>();
         Pool = GameObject.Find("Pool Manager").GetComponent<PoolManager>();
-        Speed = GameObject.Find("Background").GetComponent<Background>().speed;
-        player = GameObject.Find("Player(test)").GetComponent<Player>();
+        Speed = General.Instance.back.speed;
     }
 
     void Update()
     {
-        rigid.velocity = new Vector2(-Speed, 0);
+        rigid.velocity = new Vector2(General.Instance.back.speed * -1, 0);
     }
 
     public virtual void effecacy() 
