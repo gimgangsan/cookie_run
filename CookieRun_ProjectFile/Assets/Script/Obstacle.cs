@@ -21,13 +21,19 @@ public class Obstacle : MonoBehaviour, IObjectSpeed
             Destroy(gameObject);
         }
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (collision.CompareTag("Player"))
         {
-            Player player = collision.collider.GetComponent<Player>();
-            player.hp -= 20;
-            Destroy(gameObject);
+            Player player = collision.GetComponent<Player>();
+            if (back.speed < 38 && player.IsEnlarged == false)
+            {
+                player.hp -= 10;
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
     public void Movement(float speed)

@@ -11,12 +11,12 @@ public class Player : MonoBehaviour, IPlayerAbility
     public ParticleSystem RunningParticle;
     public Slider slider;
     public Image sliderFill;
+    public bool IsEnlarged = false;
 
     private int JumpCount = 0;
     private Rigidbody2D rigid;
     private CapsuleCollider2D PlayerCollider;
     private Animator Animator;
-    private bool IsEnlarged = false;
     private int CurrentScore = 0;
 
     private Background back;
