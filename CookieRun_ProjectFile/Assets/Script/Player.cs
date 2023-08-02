@@ -81,11 +81,13 @@ public class Player : MonoBehaviour, IPlayerAbility
             Animator.Play("PlayerRunning");
             RunningParticle.Play();
         }
+    }
 
-        if (collision.collider.CompareTag("Item"))
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Item"))
         {
-            Debug.Log("lol");
-            //collision.collider.GetComponent<ItemINF>().effecacy();
+            collision.GetComponent<ItemINF>().effecacy();
         }
     }
 

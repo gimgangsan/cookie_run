@@ -8,5 +8,6 @@ public class HPPotion : Item
     public override void effecacy()
     {
         base.player.RestoreHP(restore);
+        base.effecacy();
     }
 }

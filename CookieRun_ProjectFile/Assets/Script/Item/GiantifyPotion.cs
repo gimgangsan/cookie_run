@@ -7,5 +7,6 @@ public class GiantifyPotion : Item
     public override void effecacy()
     {
         base.player.Enlarge();
+        base.effecacy();
     }
 }

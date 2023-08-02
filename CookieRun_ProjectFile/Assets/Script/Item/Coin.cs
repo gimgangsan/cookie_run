@@ -8,5 +8,6 @@ public class Coin : Item
     public override void effecacy()
     {
         base.player.GetScore(Score);
+        base.effecacy();
     }
 }
