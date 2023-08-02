@@ -6,7 +6,7 @@ public class General : MonoBehaviour
 {
     private static General instance = null;
 
-    public Player player;
+    public IPlayerAbility player;
     public Background back;
 
     void Awake()
@@ -21,7 +21,7 @@ public class General : MonoBehaviour
             Destroy(this.gameObject);
         }
 
-        this.player = GameObject.Find("Player(test)").GetComponent<Player>();
+        this.player = GameObject.Find("Player(test)").GetComponent<IPlayerAbility>();
         this.back = GameObject.Find("Background").GetComponent<Background>();
     }
 
