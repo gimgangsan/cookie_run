@@ -12,12 +12,14 @@ public class Player : MonoBehaviour, IPlayerAbility
     public Slider slider;
     public Image sliderFill;
     public bool IsEnlarged = false;
+    public GameObject GameOverManu;
 
     private int JumpCount = 0;
     private Rigidbody2D rigid;
     private CapsuleCollider2D PlayerCollider;
     private Animator Animator;
     private int CurrentScore = 0;
+    private bool alive = true;
 
     private Background back;
 
@@ -28,7 +30,6 @@ public class Player : MonoBehaviour, IPlayerAbility
         PlayerCollider = GetComponent<CapsuleCollider2D>();
         Animator = GetComponent<Animator>();
         slider.maxValue = hp;
-        slider.value = slider.maxValue;
         back = GameObject.Find("Background").GetComponent<Background>();
     }
 
@@ -47,9 +48,11 @@ public class Player : MonoBehaviour, IPlayerAbility
             GetScore(100);
         }
 
-        if(hp<=0)
+        if(hp<=0 && alive)
         {
-            //Time.timeScale = 0;
+            Time.timeScale = 0;
+            GameOverManu.SetActive(true);
+            alive = false;
         }
     }
 
@@ -124,5 +127,12 @@ public class Player : MonoBehaviour, IPlayerAbility
         int NewScore = CurrentScore + amount;
         CurrentScore = NewScore;
         ScoreUI.GetComponent<Text>().text = NewScore.ToString();
+    }
+
+    public void GameReset()
+    {
+        alive = true;
+        hp = slider.maxValue;
+        Time.timeScale = 1;
     }
 }
