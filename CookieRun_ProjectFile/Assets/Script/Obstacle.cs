@@ -16,10 +16,12 @@ public class Obstacle : MonoBehaviour, IObjectSpeed
     void Update()
     {
         Movement(back.speed);
+        /*
         if (transform.position.x <= -12)
         {
             Destroy(gameObject);
         }
+        */
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

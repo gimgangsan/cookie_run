@@ -21,7 +21,7 @@ public class Item : MonoBehaviour, ItemINF
 
     public virtual void effecacy() 
     {
-        ItemPickParticle = Pool.Get(PoolManager.ObjectType.IPP).GetComponent<ParticleSystem>();
+        ItemPickParticle = Pool.Get(0).GetComponent<ParticleSystem>();
         ItemPickParticle.transform.position = transform.position;
         ItemPickParticle.Play();
         gameObject.SetActive(false);

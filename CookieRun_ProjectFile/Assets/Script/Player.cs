@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Player : MonoBehaviour, IPlayerAbility
 {
-    public float hp = 100;
+    [Range(0,100)] public float hp = 100;
     public float EnlargeScale = 2;
     public GameObject ScoreUI;
     public ParticleSystem RunningParticle;
@@ -45,6 +45,11 @@ public class Player : MonoBehaviour, IPlayerAbility
         if (Input.GetKeyDown(KeyCode.P))
         {
             GetScore(100);
+        }
+
+        if(hp<=0)
+        {
+            //Time.timeScale = 0;
         }
     }
 
