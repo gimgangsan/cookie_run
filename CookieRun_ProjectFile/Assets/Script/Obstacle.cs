@@ -4,18 +4,6 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour, IObjectSpeed
 {
-
-	// Update is called once per frame
-	void Update()
-	{
-		Movement(General.Instance.back.speed);
-		
-		if (transform.position.x <= -12)
-		{
-			Destroy(gameObject);
-		}
-		
-	}
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.CompareTag("Player"))
@@ -27,7 +15,7 @@ public class Obstacle : MonoBehaviour, IObjectSpeed
 			}
 			else
 			{
-				Destroy(gameObject);
+				gameObject.SetActive(false);
 			}
 		}
 	}

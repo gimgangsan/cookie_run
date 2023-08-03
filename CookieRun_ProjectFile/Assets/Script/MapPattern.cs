@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class MapPattern : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
     {
-        
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            transform.GetChild(i).gameObject.SetActive(true);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
+        transform.Translate(new Vector2(-1, 0) * General.Instance.back.speed * Time.deltaTime);
         if (transform.position.x <= -(transform.localScale.x/2)-10)
         {
             gameObject.SetActive(false);

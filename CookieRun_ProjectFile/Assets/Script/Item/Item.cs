@@ -14,11 +14,6 @@ public class Item : MonoBehaviour, ItemINF
         Speed = General.Instance.back.speed;
     }
 
-    void Update()
-    {
-        rigid.velocity = new Vector2(General.Instance.back.speed * -1, 0);
-    }
-
     public virtual void effecacy() 
     {
         ItemPickParticle = Pool.Get(0).GetComponent<ParticleSystem>();

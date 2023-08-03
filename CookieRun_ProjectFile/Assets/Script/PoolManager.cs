@@ -46,6 +46,7 @@ public class PoolManager : MonoBehaviour
     void GeneratePattern()
     {
         GameObject pattern = Get(Random.Range(1, Prefebs.Length));
+        pattern.transform.position = new Vector2(15 + pattern.transform.localScale.x, 4);
         cooltime = (pattern.transform.localScale.x/ General.Instance.back.speed) + Random.Range(1f, 3f);
         Invoke("GeneratePattern", cooltime);
     }
