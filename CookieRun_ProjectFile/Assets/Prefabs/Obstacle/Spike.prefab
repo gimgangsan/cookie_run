@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5715997685399787781}
   - component: {fileID: 5715997685399787782}
   - component: {fileID: 5715997685399787780}
-  - component: {fileID: 5715997685399787787}
+  - component: {fileID: 1139472073730630892}
   m_Layer: 0
   m_Name: Spike
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7145198348311737387, guid: f73dfe034c22cfc41bd7e8799020a5ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -114,7 +114,7 @@ PolygonCollider2D:
     - - {x: 0, y: -0.0625}
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
---- !u!114 &5715997685399787787
+--- !u!114 &1139472073730630892
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

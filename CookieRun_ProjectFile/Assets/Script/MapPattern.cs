@@ -10,6 +10,7 @@ public class MapPattern : MonoBehaviour
         {
             transform.GetChild(i).gameObject.SetActive(true);
         }
+        transform.position = new Vector2(15 +transform.localScale.x, 4);
     }
 
     // Update is called once per frame

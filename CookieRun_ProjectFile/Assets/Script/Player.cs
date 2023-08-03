@@ -43,11 +43,6 @@ public class Player : MonoBehaviour, IPlayerAbility
         slider.value = hp;
         sliderFill.color = new Color(1 - slider.value / slider.maxValue, slider.value / slider.maxValue, 0);
 
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            GetScore(100);
-        }
-
         if(hp<=0 && alive)
         {
             Time.timeScale = 0;

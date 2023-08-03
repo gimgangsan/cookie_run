@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5359005325568039911}
   - component: {fileID: 5359005325568039910}
   - component: {fileID: 5359005325568039913}
-  - component: {fileID: 5359005325568039912}
+  - component: {fileID: 3488346852196212638}
   m_Layer: 0
   m_Name: Idle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.5}
       - {x: 0.5, y: -0.5}
       - {x: 0.5, y: 0.375}
---- !u!114 &5359005325568039912
+--- !u!114 &3488346852196212638
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

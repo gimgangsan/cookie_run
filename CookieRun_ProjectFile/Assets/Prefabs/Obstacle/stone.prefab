@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 5614091874683022312}
   - component: {fileID: 5614091874683022319}
-  - component: {fileID: 5614091874683022317}
   - component: {fileID: 5614091874683022313}
+  - component: {fileID: 6731957902642403623}
   m_Layer: 0
   m_Name: stone
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5614091874683022317
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5614091874683022316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463d70d5aa815f54c906fcb4a1bdc102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &5614091874683022313
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -169,3 +157,15 @@ PolygonCollider2D:
       - {x: 0.17999999, y: -0.9}
       - {x: 0.28, y: -0.88}
       - {x: 0.29, y: -0.87}
+--- !u!114 &6731957902642403623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5614091874683022316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463d70d5aa815f54c906fcb4a1bdc102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

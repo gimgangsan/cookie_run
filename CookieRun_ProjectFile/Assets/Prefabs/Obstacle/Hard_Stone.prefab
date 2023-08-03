@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3874319935624272218}
   - component: {fileID: 3874319935624272219}
-  - component: {fileID: 3874319935624272216}
   - component: {fileID: 3874319935624272213}
+  - component: {fileID: 6657113187159623502}
   m_Layer: 0
   m_Name: Hard_Stone
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3874319935624272216
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3874319935624272222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 463d70d5aa815f54c906fcb4a1bdc102, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &3874319935624272213
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -241,3 +229,15 @@ PolygonCollider2D:
       - {x: 0.895, y: -3.145}
       - {x: 1.045, y: -3.135}
       - {x: 1.175, y: -3.095}
+--- !u!114 &6657113187159623502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3874319935624272222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 463d70d5aa815f54c906fcb4a1bdc102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
